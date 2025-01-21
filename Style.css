@@ -1,0 +1,92 @@
+/* # Styles généraux pour tout le site */
+body {
+    margin: 0; /* # Supprime les marges par défaut */
+    font-family: Arial, sans-serif; /* # Police d'écriture */
+    display: flex; /* # Permet de structurer le layout en flexbox */
+    flex-direction: column; /* # Aligne les éléments en colonne (menu + contenu) */
+    height: 100vh; /* # Hauteur de la page à 100% de l'écran */
+}
+
+/* # Conteneur principal qui inclut le menu et l'iframe */
+.container {
+    display: flex; /* # Divise l'écran en deux parties (menu + iframe) */
+    height: 100%;
+}
+
+/* # Styles pour le menu */
+.menu {
+    background-color: #333; /* # Fond du menu en gris foncé */
+    color: white; /* # Texte en blanc */
+    width: 200px; /* # Largeur fixe pour le menu */
+    min-width: 150px; /* # Largeur minimale */
+    padding: 0; /* # Pas de marges intérieures */
+}
+
+/* # Liste des éléments du menu */
+.menu ul {
+    list-style: none; /* # Supprime les puces de la liste */
+    padding: 0;
+    margin: 0;
+}
+
+/* # Style pour chaque élément du menu */
+.menu ul li {
+    border-bottom: 1px solid #444; /* # Ligne séparatrice entre les éléments */
+}
+
+/* # Style des liens dans le menu */
+.menu ul li a {
+    display: block; /* # Le lien occupe toute la largeur de l'élément */
+    color: white; /* # Texte en blanc */
+    text-decoration: none; /* # Supprime le soulignement */
+    padding: 15px; /* # Espacement intérieur */
+}
+
+/* # Effet au survol */
+.menu ul li a:hover {
+    background-color: #575757; /* # Change la couleur de fond au survol */
+}
+
+/* # Styles pour le contenu principal */
+.content {
+    flex-grow: 1; /* # Laisse le contenu prendre tout l'espace restant */
+    display: flex; /* # Centrage du contenu dans l'iframe */
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4; /* # Couleur de fond gris clair */
+    overflow: hidden; /* # Empêche les débordements */
+}
+
+/* # Styles pour l'iframe */
+iframe {
+    width: 100%; /* # L'iframe occupe toute la largeur */
+    height: 100%; /* # L'iframe occupe toute la hauteur */
+    border: none; /* # Supprime la bordure */
+}
+
+/* # Styles responsive pour les petits écrans */
+@media (max-width: 768px) {
+    .menu {
+        width: 100%; /* # Le menu occupe toute la largeur */
+        display: flex; /* # Les liens sont alignés horizontalement */
+        flex-direction: row; /* # Aligne les éléments du menu en ligne */
+        overflow-x: auto; /* # Permet de scroller si nécessaire */
+    }
+
+    .menu ul {
+        display: flex; /* # Liste en ligne */
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .menu ul li {
+        flex-grow: 1; /* # Chaque élément occupe une largeur égale */
+        text-align: center; /* # Centrer le texte */
+        border-bottom: none; /* # Supprime les lignes séparatrices */
+    }
+
+    .content {
+        height: calc(100% - 50px); /* # Ajuste la hauteur du contenu sous le menu */
+    }
+}
+
