@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site avec Navigation et Iframe</title>
+    <title>Site Multi-pages</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="pages/page1.html" target="contentFrame">Page 1</a></li>
-                <li><a href="pages/page2.html" target="contentFrame">Page 2</a></li>
-                <li><a href="pages/page3.html" target="contentFrame">Page 3</a></li>
-                <li><a href="pages/page4.html" target="contentFrame">Page 4</a></li>
-                <li><a href="pages/page5.html" target="contentFrame">Page 5</a></li>
-            </ul>
-        </nav>
-        <iframe name="contentFrame" src="pages/page1.html"></iframe>
-    </div>
+    <nav class="menu">
+        <ul>
+            <li><a href="page1.html" target="content">Page 1</a></li>
+            <li><a href="page2.html" target="content">Page 2</a></li>
+            <li><a href="page3.html" target="content">Page 3</a></li>
+            <li><a href="page4.html" target="content">Page 4</a></li>
+            <li><a href="page5.html" target="content">Page 5</a></li>
+        </ul>
+    </nav>
+    <main>
+        <iframe name="content" src="page1.html"></iframe>
+    </main>
 </body>
 </html>
