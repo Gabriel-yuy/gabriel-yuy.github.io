@@ -1,80 +1,99 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100%;
-    display: flex;
+/* # Styles généraux pour tout le site */
+body {
+    margin: 0; /* # Supprime les marges par défaut */
+    font-family: Arial, Arial; /* # Police d'écriture */
+    display: flex; /* # Permet de structurer le layout en flexbox */
+    flex-direction: column; /* # Aligne les éléments en colonne (menu + contenu) */
+    height: 100vh; /* # Hauteur de la page à 100% de l'écran */
 }
 
-/* Conteneur principal */
+/* # Conteneur principal qui inclut le menu et l'iframe */
 .container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
+    display: flex; /* # Divise l'écran en deux parties (menu + iframe) */
+    height: 100%;
 }
 
-/* Menu de navigation (colonne sur la gauche, pleine hauteur) */
+/* # Styles pour le menu */
 .menu {
-    background-color: #333;
-    color: white;
-    width: 250px; /* Largeur du menu */
-    min-width: 200px;
-    height: 100vh; /* Prend toute la hauteur */
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+    background-color: #f32f08; /* # Fond du menu en gris foncé */
+    color: #fff; /* # Texte en blanc */
+    width: 200px; /* # Largeur fixe pour le menu */
+    min-width: 150px; /* # Largeur minimale */
+    padding: 0; /* # Pas de marges intérieures */
 }
 
+/* # Liste des éléments du menu */
 .menu ul {
-    list-style: none;
+    list-style: none; /* # Supprime les puces de la liste */
     padding: 0;
     margin: 0;
-    width: 100%;
 }
 
+/* # Style pour chaque élément du menu */
 .menu ul li {
-    border-bottom: 1px solid #444;
-    width: 100%;
+    border-bottom: 1px solid #701503; /* # Ligne séparatrice entre les éléments */
 }
 
+/* # Style des liens dans le menu */
 .menu ul li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
+    display: block; /* # Le lien occupe toute la largeur de l'élément */
+    color: white; /* # Texte en blanc */
+    text-decoration: none; /* # Supprime le soulignement */
+    padding: 15px; /* # Espacement intérieur */
 }
 
+/* # Effet au survol */
 .menu ul li a:hover {
-    background-color: #575757;
+    background-color: #f18c78; /* # Change la couleur de fond au survol */
 }
 
-/* Zone de contenu */
+/* # Styles pour le contenu principal */
 .content {
-    flex-grow: 1;
-    display: flex;
+    flex-grow: 1; /* # Laisse le contenu prendre tout l'espace restant */
+    display: flex; /* # Centrage du contenu dans l'iframe */
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
-    overflow: hidden;
+    background-color: #f18c78; /* # Couleur de fond gris clair */
+    overflow: hidden; /* # Empêche les débordements */
 }
 
-/* Style de l'iframe */
+/* # Styles pour l'iframe */
 iframe {
-    width: 100%;
-    height: 100vh;
-    border: none;
+    width: 100%; /* # L'iframe occupe toute la largeur */
+    height: 100%; /* # L'iframe occupe toute la hauteur */
+    border: none; /* # Supprime la bordure */
 }
 
-/* Responsive - Réduit la largeur du menu sur petits écrans */
+/* # Styles responsive pour les petits écrans */
 @media (max-width: 768px) {
     .menu {
-        width: 180px;
-        min-width: 150px;
+        width: 100%; /* # Le menu occupe toute la largeur */
+        display: flex; /* # Les liens sont alignés horizontalement */
+        flex-direction: row; /* # Aligne les éléments du menu en ligne */
+        overflow-x: auto; /* # Permet de scroller si nécessaire */
     }
 
-    .menu ul li a {
-        padding: 15px;
+    .menu ul {
+        display: flex; /* # Liste en ligne */
+        flex-direction: row;
+        width: 100%;
     }
+
+    .menu ul li {
+        flex-grow: 1; /* # Chaque élément occupe une largeur égale */
+        text-align: center; /* # Centrer le texte */
+        border-bottom: none; /* # Supprime les lignes séparatrices */
+    }
+
+    .content {
+        height: calc(100% - 50px); /* # Ajuste la hauteur du contenu sous le menu */
+    }
+
 }
+.panorama-container {
+    width: 100%;
+    height: 500px;
+    background: #000;
+}
+
+	

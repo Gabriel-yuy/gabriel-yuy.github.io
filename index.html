@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Web Simple</title>
+    <title>Site Multi-pages</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Test</h1>
-    <div class="container">
+    <div class="menu">
         <nav class="menu">
             <ul>
-                <li><a href="page1.html" target="iframe">Page 1</a></li>
-                <li><a href="page2.html" target="iframe">Page 2</a></li>
-                <li><a href="page3.html" target="iframe">Page 3</a></li>
-                <li><a href="page4.html" target="iframe">Page 4</a></li>
-                <li><a href="page5.html" target="iframe">Page 5</a></li>
+                <li><a href="page1.html" target="content-frame">Accueil</a></li>
+                <li><a href="page2.html" target="content-frame">Page 1</a></li>
+                <li><a href="page3.html" target="content-frame">Page 2</a></li>
+                <li><a href="page4.html" target="content-frame">Page 3</a></li>
+                <li><a href="page5.html" target="content-frame">Contact</a></li>
             </ul>
         </nav>
     </div>
-    <iframe name="iframe" src="page1.html"></iframe>
+    <div>
+        <iframe name="content-frame" src="page1.html" class="content" width="100%" height="500px"></iframe>
+    </div>
+    <main>
+        <h1>Bienvenue sur mon site</h1>
+        <p>Ceci est la page d'accueil.</p>
+    </main>
 </body>
 </html>
+
+
